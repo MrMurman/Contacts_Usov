@@ -42,7 +42,6 @@
 		95E686FD268C452900F755D3 = {
 			isa = PBXGroup;
 			children = (
-				95E6871D268C69C900F755D3 /* Model */,
 				95E68708268C452900F755D3 /* Contacts_Usov */,
 				95E68707268C452900F755D3 /* Products */,
 			);
@@ -59,6 +58,7 @@
 		95E68708268C452900F755D3 /* Contacts_Usov */ = {
 			isa = PBXGroup;
 			children = (
+				95E6871D268C69C900F755D3 /* Model */,
 				95E68709268C452900F755D3 /* AppDelegate.swift */,
 				95E6870B268C452900F755D3 /* SceneDelegate.swift */,
 				95E6870D268C452900F755D3 /* ViewController.swift */,
@@ -305,6 +305,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.MrMurmanProd.Contacts-Usov";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -324,6 +325,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.MrMurmanProd.Contacts-Usov";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

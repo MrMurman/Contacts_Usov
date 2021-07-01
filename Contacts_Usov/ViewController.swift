@@ -78,28 +78,50 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - Logic
+// MARK: - Variables declaration
+
 
 class ViewController: UIViewController {
 
+    
+    //var userDefaults = UserDefaults.standard
+    var storage: ContactStorageProtocol!
+    
     public var contacts = [ContactProtocol]() {
         didSet {
             contacts.sort{ $0.title < $1.title }
+            //actually saves contacts to storage
+            storage.save(contacts: contacts)
         }
     }
     
+    
+    
     @IBOutlet var tableView: UITableView!
     
+    // MARK: - Logic
     override func viewDidLoad() {
         super.viewDidLoad()
+        storage = ContactStorage()
         loadContacts()
+        
+        // No longer needed stuff
+        //userDefaults.set("Some random text", forKey: "Some key")
+       // print(userDefaults.object(forKey: "Some key"))
+        //print(userDefaults.string(forKey: "Some key"))
     }
 
 
     private func loadContacts() {
-        contacts.append(Contact(title: "Саня Техосмотр", phone: "+79991231232"))
-        contacts.append(Contact(title: "Владимир Петухов", phone: "+78121334321"))
-        contacts.append(Contact(title: "Сильвестр", phone: "+7000911112"))
+        
+        contacts = storage.load()
+        
+        
+        
+        // test contacts
+//        contacts.append(Contact(title: "Саня Техосмотр", phone: "+79991231232"))
+//        contacts.append(Contact(title: "Владимир Петухов", phone: "+78121334321"))
+//        contacts.append(Contact(title: "Сильвестр", phone: "+7000911112"))
         //contacts.sort{ $0.title < $1.title } -- no longer needed after adding didSet to var declaration
     }
     
